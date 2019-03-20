@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Site Properties -->
-    <title>Fixed Menu Example - Semantic</title>
+    <title>App Interest Predictor</title>
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/reset.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/site.css') }}">
@@ -60,7 +60,8 @@
     <div class="ui container">
         <a href="/" class="header item">
             <!--<img class="logo" src="assets/images/logo.png">-->
-            House Pricing Prediction
+           App Interest Predictor
+
         </a>
         <a href="/" class="item">Home</a>
     </div>
@@ -68,35 +69,38 @@
 
 <div class="ui main text container">
 
-    <h1 class="ui header">Predicted Price</h1>
-
+    <h1 class="ui header">Predicted Application Interest</h1>                           
     <div class="ui statistics">
         <div class="statistic">
-            <div class="value">{{ bedrooms }}</div>
-            <div class="label">Bedrooms</div>
+            <div class="value">{{ user_age }}</div>
+            <div class="label">Age</div>
         </div>
         <div class="statistic">
-            <div class="value">{{ bathrooms }}</div>
-            <div class="label">Bathrooms</div>
+            <div class="value">{{ user_gender }}</div>
+            <div class="label">Gender</div>
         </div>
         <div class="statistic">
-            <div class="value">{{ sqft_living15 }}</div>
-            <div class="label">Square foot</div>
+            <div class="value">{{ user_longitude }}</div>
+            <div class="label">Longitude</div>
         </div>
         <div class="statistic">
-            <div class="value">{{ grade }}</div>
-            <div class="label">Grade</div>
+            <div class="value">{{ user_latitude }}</div>
+            <div class="label">Laititude</div>
         </div>
         <div class="statistic">
-            <div class="value">{{ condition }}</div>
-            <div class="label">Conditions</div>
+            <div class="value">{{ day_of_week }}</div>
+            <div class="label">Day of Week</div>
+        </div>
+        <div class="statistic">
+            <div class="value">{{ hour_of_day }}</div>
+            <div class="label">Hour of Day</div>
         </div>
         <br>
     </div>
     <p></p>
-    <div class="ui center aligned container large statistic">
-        <div class="value">{{ predicted_price }}</div>
-        <div class="label">Predicted Price</div>
+    <div class="ui center aligned container small statistic">
+        <div class="value">{{ interest_list }}</div>
+        <div class="label">List of Application Interest</div>
     </div>
 
 </div>
