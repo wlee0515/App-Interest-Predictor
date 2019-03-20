@@ -4,3 +4,4 @@ numpy>=1.14
 scipy>=0.15.1
 joblib>=0.13.2
 jsonschema>=2.6.0
+pandas>=0.24.1
