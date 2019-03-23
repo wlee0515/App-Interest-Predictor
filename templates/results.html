@@ -52,9 +52,24 @@
         width: 100%;
         }
     </style>
-
+    <script>
+      function composeList() {
+      
+         list_string = "{{ interest_list }}";
+         list_string = list_string.replace(/&#34;/g,'"');
+         list_Obj=JSON.parse(list_string);
+         var wDOM = document.getElementById("category_list_div");
+         if ((null != list_Obj) &&(null !=wDOM)) {
+            wDOM.innerHTML = "<ul type = 'square'>";
+            for( var i = 0; i  < list_Obj.length; ++i){
+              wDOM.innerHTML +="<li>" +  list_Obj[i] + "</li>";
+            }
+            wDOM.innerHTML += "</ul>";
+         }
+      }
+    </script>
 </head>
-<body>
+<body onload="composeList()">
 
 <div class="ui fixed inverted menu">
     <div class="ui container">
@@ -99,8 +114,8 @@
     </div>
     <p></p>
     <div class="ui center aligned container small statistic">
-        <div class="value">{{ interest_list }}</div>
-        <div class="label">List of Application Interest</div>
+        <div class="label">Top 25 Categories</div>
+        <div class="statistic" id="category_list_div">{{ interest_list }}</div>
     </div>
 
 </div>
